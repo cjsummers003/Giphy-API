@@ -1,4 +1,4 @@
-# Star War API
+# Star Wars API
 https://cjsummers003.github.io/Giphy-API
 
 * The User will click on one of the Star Wars themed button to obtain a selection of gifs related to the button selected.
@@ -11,7 +11,7 @@ https://cjsummers003.github.io/Giphy-API
 * The Users custom selection will be displayed.
 <img src="assets/images/swsample3.jpg">
 
-* If the use leave the area blank and just hits the submit button a message will be displayed to alert the user to try again.
+* If the user leave the area blank and just hits the submit button a message will be displayed to alert the user to try again.
 <img src="assets/images/swsample4.jpg">
 
 <h2><strong>External Resources Used</Strong></h2>
