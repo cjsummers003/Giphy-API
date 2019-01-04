@@ -1,7 +1,7 @@
 # Star War API
 https://cjsummers003.github.io/Giphy-API
 
-* The User will click on one of the Star Wars themed button to obtain a selection of gifs related to the buttone selected.
+* The User will click on one of the Star Wars themed button to obtain a selection of gifs related to the button selected.
 <img src="assets/images/swsample1.jpg">
 
 * Once the gifs are displayed, if the user click on the image it will animate and if clicked again the animation will stop.
