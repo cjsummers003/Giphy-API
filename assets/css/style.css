@@ -28,8 +28,9 @@ body{
   
   .container2{
     position: relative;
-    margin-top: 5%;
+    margin-top: 10%;
   }
+
 
   form{
       position: center;
@@ -80,11 +81,25 @@ h1{
     font-weight: bold;
     color:white;
 }
-  
-#ratings {
-  color: red
+
+#ratingDiv { 
+  text-align: center; 
+  font-size: 20px;
+  width: 200px;
+  display: block;
+}
+
+#ratingAndImage{ 
+  padding: 0 50px;
+  float: left; 
 }
 
 .starWars{
   border-color: yellow;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
