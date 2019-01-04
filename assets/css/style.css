@@ -1,0 +1,90 @@
+body{
+    margin: auto;
+    font-family: 'Jacques Francois', serif;
+    color: white;
+    background-image: url("../images/starwarsbg4.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    background-position: center;
+  }
+  
+  html, body{
+    height:100%;
+  }
+  
+  #container{
+    font-family: 'Jacques Francois', serif;
+    color: white;
+    font-size: 48px;
+    padding: 10% 0;
+    background-color:transparent;
+    width:960px;
+    margin:10% auto;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    min-height: 80%;
+  }
+  
+  .container2{
+    position: relative;
+    margin-top: 5%;
+  }
+
+  form{
+      position: center;
+      justify-content: center;
+  }
+
+  #addGif{
+    font-size: 15px;
+  }
+
+  #removeGif{
+    font-size: 15px;
+  }
+
+  #buttonItems{
+    display:block;
+    width:400px;
+    height:100px;
+    margin: 10px auto 0 auto;
+    cursor: pointer;
+    background:transparent;
+    font-size: 42px;;
+  }
+
+.btn-danger {
+  background-color: black;
+  border: solid 1px yellow;
+}
+  
+.btn1{
+    margin: 0;
+    background: black;
+    color: red;
+    border: solid 1px yellow;
+    font-size: 15px;
+    height: 40px;
+    width: 115px;
+}
+.btn1:hover {
+  background-color: darkred;
+  color: white;
+}
+
+h1{
+    font-family: 'Jacques Francois', serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color:white;
+}
+  
+#ratings {
+  color: red
+}
+
+.starWars{
+  border-color: yellow;
+}
