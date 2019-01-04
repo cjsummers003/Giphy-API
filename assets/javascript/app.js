@@ -19,7 +19,6 @@ function showButtons() {
 showButtons();
 
 // This runs when the user clicks "submit", it adds it to the button array and updates the buttons.
-
 $("#addGif").on("click", function (event) {
     $("#entry").empty();
     event.preventDefault();
@@ -63,55 +62,53 @@ function display() {
         url: queryURL,
         method: "GET"
     }).done(function (response) {
-            // This runs 10 times (limit is 10 in query) to show all the GIPhy pictures from the website's response.
-            for (var j = 0; j < response.data.length; j++) {
+        // This runs 10 times (limit is 10 in query) to show all the GIPhy pictures from the website's response.
+        for (var j = 0; j < response.data.length; j++) {
 
-                // Gets the animated gif URL
-                var active = response.data[j].images.fixed_width.url;
+            // Gets the animated gif URL
+            var active = response.data[j].images.fixed_width.url;
 
-                // Gets the still gif URL
-                var still = response.data[j].images.fixed_width_still.url;
-                var rating = "Rating: " + (response.data[j].rating).toUpperCase();
+            // Gets the still gif URL
+            var still = response.data[j].images.fixed_width_still.url;
+            var rating = "Rating: " + (response.data[j].rating).toUpperCase();
 
-                // Creates the new img item
-                var starWars = $("<img>");
+            // Creates the new img item
+            var starWarsImage = $("<img>");
 
-                // This changes the text color of ratings to yellow so it can be seen against the starWars background image.
-                $("#ratings").css("color", "yellow");
+            // This changes the text color of ratings to yellow so it can be seen against the starWars background image.
+            $("#ratings").css("color", "yellow");
 
-                // This creates a new div for the rating so that it maintains the gifs size
-                var ratingDiv = $("<div id='ratingDiv'>" + rating + "</div>");
-                $(ratingDiv).css({ "text-align": "center", "font-size": "20px", "width": "200", "display": "block" });
-                $(starWars).attr({ "active": active, "still": still, "src": still, "state": "still" });
+            // This creates a new div for the rating so that it maintains the gifs size
+            var ratingDiv = $("<div id='ratingDiv'>" + rating + "</div>");
+            $(starWarsImage).attr({ "active": active, "still": still, "src": still, "state": "still" });
 
-                // This holds the new div for both rating and the image. Every image will have a rating on top of it.
-                var ratingAndImage = $("<div>");
-                $(ratingAndImage).css({ "float": "left" });
-                $(ratingAndImage).prepend(ratingDiv);
+            // This holds the new div for both rating and the image. Every image will have a rating on top of it.
+            var ratingAndImage = $("<div id='ratingAndImage'>");
+            $(ratingAndImage).prepend(ratingDiv, starWarsImage);
 
-                // This adds the rating and image to the page.
-                $("#ratings").prepend(ratingAndImage);
+            // This adds the rating and image to the page.
+            $("#ratings").prepend(ratingAndImage);
 
 
-                // // When the user clicks on a picture, this will either start or stop the animation of that picture.
-                $(starWars).on("click", function (event) {
+            // // When the user clicks on a picture, this will either start or stop the animation of that picture.
+            $(starWarsImage).on("click", function (event) {
 
-                    // This is just to clear out any error message (if there is one)
-                    $("#entry").empty();
+                // This is just to clear out any error message (if there is one)
+                $("#entry").empty();
 
-                    var state = $(this).attr("state");
-                    var source = $(this).attr("src");
-                    if (state === "still") {
-                        $(this).attr("src", $(this).attr("active"));
-                        $(this).attr("state", "active");
+                var state = $(this).attr("state");
+                var source = $(this).attr("src");
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("active"));
+                    $(this).attr("state", "active");
 
-                    } else {
-                        $(this).attr("src", $(this).attr("still"));
-                        $(this).attr("state", "still");
-                    }
-                });
-            }
-        });
+                } else {
+                    $(this).attr("src", $(this).attr("still"));
+                    $(this).attr("state", "still");
+                }
+            });
+        }
+    });
 }
 
 
